@@ -1,6 +1,6 @@
-const app = require('express')();
+const {app, server} = require('./server/socket')
 const {Nuxt, Builder}  = require('nuxt');
-const config = require('../config/nuxt.config.js');
+const config = require('./config/nuxt.config');
 const morgan = require('morgan');
 
 const nuxt = new Nuxt(config);
@@ -14,7 +14,7 @@ builder.build()
   // Рендерить каждый маршрут с Nuxt.js
     app.use(nuxt.render)
     // Запустить сервер
-    app.listen(8000, ()=>{
+    server.listen(8000, ()=>{
        console.log('Server run in 8000 port');
     });
   });
