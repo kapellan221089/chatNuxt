@@ -16,7 +16,8 @@
     "morgan": "*",
     "node-sass": "*",
     "nuxt": "^*",
-    "sass-loader": "*"
+    "sass-loader": "*",
+    "socket.io": "^2.3.0"
   },
   "devDependencies": {
     "@nuxtjs/vuetify": "*"

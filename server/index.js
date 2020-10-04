@@ -1,7 +1,6 @@
 const app = require('express')();
-const express = require('express');
 const {Nuxt, Builder}  = require('nuxt');
-const config = require('./config/nuxt.config.js');
+const config = require('../config/nuxt.config.js');
 const morgan = require('morgan');
 
 const nuxt = new Nuxt(config);
