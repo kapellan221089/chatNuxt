@@ -1,9 +1,6 @@
-export const state = ()=>{
+export const state = ()=>({});
 
-
-};
-
-export const action ={
+export const actions = {
     SOCKET_new(ctx, data){
         console.log('Message recived', data)
     }
