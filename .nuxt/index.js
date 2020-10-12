@@ -13,7 +13,9 @@ import { createStore } from './store.js'
 
 /* Plugins */
 
-import nuxt_plugin_vuesocket_1b5fe905 from 'nuxt_plugin_vuesocket_1b5fe905' // Source: ../plugins/vuesocket (mode: 'client')
+import nuxt_plugin_nuxticons_08665d86 from 'nuxt_plugin_nuxticons_08665d86' // Source: ./nuxt-icons.js (mode: 'all')
+import nuxt_plugin_vuetify_e5914fcc from 'nuxt_plugin_vuetify_e5914fcc' // Source: ../plugins/vuetify (mode: 'all')
+import nuxt_plugin_socket_412a8e67 from 'nuxt_plugin_socket_412a8e67' // Source: ../plugins/socket (mode: 'client')
 
 // Component: <ClientOnly>
 Vue.component(ClientOnly.name, ClientOnly)
@@ -66,7 +68,7 @@ async function createApp(ssrContext, config = {}) {
   // here we inject the router and store to all child components,
   // making them available everywhere as `this.$router` and `this.$store`.
   const app = {
-    head: {"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"}],"link":[],"style":[],"script":[]},
+    head: {"title":"chat-nuxt","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"My world-class Nuxt.js project"},{"hid":"mobile-web-app-capable","name":"mobile-web-app-capable","content":"yes"},{"hid":"apple-mobile-web-app-title","name":"apple-mobile-web-app-title","content":"chat-nuxt"},{"hid":"theme-color","name":"theme-color","content":"#fff"},{"hid":"og:type","name":"og:type","property":"og:type","content":"website"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"},{"rel":"stylesheet","href":"https:\u002F\u002Ffonts.googleapis.com\u002Fcss?family=Roboto:300,400,500,700|Material+Icons"},{"rel":"manifest","href":"\u002F_nuxt\u002Fmanifest.f2bd20fa.json"},{"rel":"shortcut icon","href":"\u002F_nuxt\u002Ficons\u002Ficon_64.9mld2VBMsQ$.png"},{"rel":"apple-touch-icon","href":"\u002F_nuxt\u002Ficons\u002Ficon_512.9mld2VBMsQ$.png","sizes":"512x512"}],"style":[],"script":[],"htmlAttrs":{"lang":"en"}},
 
     store,
     router,
@@ -195,8 +197,16 @@ async function createApp(ssrContext, config = {}) {
   }
   // Plugin execution
 
-  if (process.client && typeof nuxt_plugin_vuesocket_1b5fe905 === 'function') {
-    await nuxt_plugin_vuesocket_1b5fe905(app.context, inject)
+  if (typeof nuxt_plugin_nuxticons_08665d86 === 'function') {
+    await nuxt_plugin_nuxticons_08665d86(app.context, inject)
+  }
+
+  if (typeof nuxt_plugin_vuetify_e5914fcc === 'function') {
+    await nuxt_plugin_vuetify_e5914fcc(app.context, inject)
+  }
+
+  if (process.client && typeof nuxt_plugin_socket_412a8e67 === 'function') {
+    await nuxt_plugin_socket_412a8e67(app.context, inject)
   }
 
   // Lock enablePreview in context

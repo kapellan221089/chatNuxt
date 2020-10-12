@@ -1,26 +1,27 @@
 {
-  "name": "chatvue",
+  "name": "chat-nuxt",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "My world-class Nuxt.js project",
+  "author": "kapellan",
+  "private": false,
   "scripts": {
     "dev": "nuxt",
-    "start": ""
+    "start": "node ./server/index.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "express": "*",
-    "mongoose": "*",
-    "morgan": "*",
-    "node-sass": "*",
-    "nuxt": "^*",
-    "sass-loader": "*",
+    "@nuxtjs/pwa": "^2.6.0",
+    "cross-env": "^5.2.1",
+    "express": "^4.16.4",
+    "nuxt": "^2.14.6",
     "socket.io": "^2.3.0",
-    "vue-socket.io": "^3.0.10"
+    "morgan": "*",
+    "vue-socket.io": "^3.0.10",
+    "vuetify": "^1.5.24",
+    "vuetify-loader": "^1.6.0"
   },
   "devDependencies": {
-    "@nuxtjs/vuetify": "*"
+    "nodemon": "^1.19.4",
+    "stylus": "^0.54.8",
+    "stylus-loader": "^3.0.2"
   }
 }
