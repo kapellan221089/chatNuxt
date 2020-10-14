@@ -1,5 +1,12 @@
 [
   {
+    "name": "chat",
+    "path": "/chat",
+    "component": "/home/serg/Рабочий стол/chatVue/pages/chat.vue",
+    "chunkName": "pages/chat",
+    "_name": "_7bd560e7"
+  },
+  {
     "name": "index",
     "path": "/",
     "component": "/home/serg/Рабочий стол/chatVue/pages/index.vue",
