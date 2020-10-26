@@ -34,6 +34,9 @@
 <script>
   import{mapMutations}from 'vuex'
   export default {
+    head: {
+      title: 'Nuxt чат к вашим услугам'
+    },
     layout: "empty",
     sockets: {
       connect: function() {
@@ -61,9 +64,17 @@
             name: this.name,
             room: this.room
           }
-          this.setUser(user);
-          this.$router.push('/chat');
-          console.log(user)
+
+          this.$socket.emit('userJoined', user, data =>{
+            if(typeof data==='String'){
+              console.error(data)
+            }else{
+              user.id = data.userID
+              this.setUser(user);
+              this.$router.push('/chat');
+              console.log(user)
+            }
+          });
         };
       }
     },

@@ -2,9 +2,21 @@ const app = require('express')()
 const server = require('http').createServer(app)
 const io = require('socket.io')(server)
 
-io.on('connection', socket => {
-  console.log('IO Connected')
+const m = (name,text,id)=>({name,text,id})
 
+io.on('connection', socket => {
+  socket.on('userJoined', (data, cb) =>{
+    if(!data.name===null||!data.room){
+      return cb('Not data')
+    }
+    socket.join(data.room)
+    cb({userID:socket.id});
+    socket.emit('newMessage', m('admin', `Добро пожаловать ${data.name}.`))
+    socket.broadcast
+      .to(data.room)
+      .emit('newMessage', m('admin', `Пользователь ${data.name} зашел.`))
+  })
+  
   /*socket.on('createMessage', data => {
     setTimeout(() => {
       socket.emit('newMessage', {

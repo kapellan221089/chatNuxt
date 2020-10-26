@@ -6,10 +6,10 @@ import NuxtLoading from './components/nuxt-loading.vue'
 
 import '../assets/style/app.styl'
 
+import _6f6c098b from '../layouts/default.vue'
 import _77430317 from '../layouts/empty.vue'
-import _6f6c098b from './layouts/default.vue'
 
-const layouts = { "_empty": sanitizeComponent(_77430317),"_default": sanitizeComponent(_6f6c098b) }
+const layouts = { "_default": sanitizeComponent(_6f6c098b),"_empty": sanitizeComponent(_77430317) }
 
 export default {
   render (h, props) {
@@ -63,7 +63,8 @@ export default {
   },
   created () {
     // Add this.$nuxt in child instances
-    Vue.prototype.$nuxt = this
+    this.$root.$options.$nuxt = this
+
     if (process.client) {
       // add to window so we can listen when ready
       window.$nuxt = this
