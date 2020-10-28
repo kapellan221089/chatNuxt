@@ -1,6 +1,6 @@
 <template>
   <v-app app>
-    <v-navigation-drawer v-model="drawer" app absolute temporary>
+    <v-navigation-drawer v-model="drawer" app mobile-breakpoint="650">
       <v-list subheader>
         <v-subheader>Список людей в комнате</v-subheader>
         <v-list-item v-for="u in users" :key="u.id" @click.prevent>
@@ -26,9 +26,9 @@
       <v-toolbar-title>Collapsing Bar</v-toolbar-title>
     </v-app-bar>
     <v-main app>
-      <v-container fluid>
+      <div style="heigth:100%">
         <nuxt/>
-      </v-container>
+      </div>
     </v-main>
 
     <v-footer app>
@@ -42,6 +42,7 @@
 import { mapState, mapMutations } from "vuex";
   export default {
     data: () => ({
+
     drawer: true,
     collapseOnScroll: true,
     users: [{ id: 1, name: "User 1" }, { id: 2, name: "User 2" }]

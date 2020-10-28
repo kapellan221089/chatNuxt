@@ -13,7 +13,7 @@ import { createStore } from './store.js'
 
 /* Plugins */
 
-import nuxt_plugin_vuetify_e5914fcc from 'nuxt_plugin_vuetify_e5914fcc' // Source: ../plugins/vuetify (mode: 'all')
+import nuxt_plugin_plugin_150bfbb9 from 'nuxt_plugin_plugin_150bfbb9' // Source: ./vuetify/plugin.js (mode: 'all')
 import nuxt_plugin_socket_412a8e67 from 'nuxt_plugin_socket_412a8e67' // Source: ../plugins/socket (mode: 'client')
 
 // Component: <ClientOnly>
@@ -74,7 +74,7 @@ async function createApp(ssrContext, config = {}) {
   // here we inject the router and store to all child components,
   // making them available everywhere as `this.$router` and `this.$store`.
   const app = {
-    head: {"title":"chat-nuxt","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"My world-class Nuxt.js project"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"},{"rel":"stylesheet","href":"https:\u002F\u002Ffonts.googleapis.com\u002Fcss?family=Roboto:300,400,500,700|Material+Icons"}],"style":[],"script":[]},
+    head: {"meta":[],"link":[{"rel":"stylesheet","type":"text\u002Fcss","href":"https:\u002F\u002Ffonts.googleapis.com\u002Fcss?family=Roboto:100,300,400,500,700,900&display=swap"},{"rel":"stylesheet","type":"text\u002Fcss","href":"https:\u002F\u002Fcdn.jsdelivr.net\u002Fnpm\u002F@mdi\u002Ffont@latest\u002Fcss\u002Fmaterialdesignicons.min.css"}],"style":[],"script":[]},
 
     store,
     router,
@@ -203,8 +203,8 @@ async function createApp(ssrContext, config = {}) {
   }
   // Plugin execution
 
-  if (typeof nuxt_plugin_vuetify_e5914fcc === 'function') {
-    await nuxt_plugin_vuetify_e5914fcc(app.context, inject)
+  if (typeof nuxt_plugin_plugin_150bfbb9 === 'function') {
+    await nuxt_plugin_plugin_150bfbb9(app.context, inject)
   }
 
   if (process.client && typeof nuxt_plugin_socket_412a8e67 === 'function') {
