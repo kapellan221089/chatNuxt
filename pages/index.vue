@@ -2,6 +2,20 @@
   <v-layout column justify-center align-center>
     <v-flex xs12 sm8>
       <v-card min-width='400'>
+            <v-snackbar
+              v-model="snackbar"
+              top
+            >
+              {{ message }}
+                <v-btn
+                  color="pink"
+                  text
+                  v-bind="attrs"
+                  @click="snackbar = false"
+                >
+                  Закрыть
+                </v-btn>
+            </v-snackbar>
         <v-card-title>
           <h1>Chat</h1>
         </v-card-title>
@@ -44,6 +58,8 @@
       }
     },
     data: () => ({
+      snackbar: false,
+      message: '',
       valid: true,
       name: '',
       nameRules: [
@@ -55,6 +71,17 @@
         v => !!v || 'Room is required',
       ]
     }),
+
+    mounted(){
+      const {message} = this.$route.query
+      if(message==='noUser'){
+        this.message = 'Введите данные'
+      }else if(message==='leftChat'){
+        this.message = 'Вы вышли из чата'
+      }
+
+      this.snackbar = !!this.message
+    },
 
     methods: {
       ...mapMutations(["setUser"]),

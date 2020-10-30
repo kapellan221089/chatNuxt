@@ -1,18 +1,20 @@
 <template>
     <div class='c-wrap'>   
-        <div class = 'c-chat'>
+        <div class = 'c-chat' ref = 'block'>
             <Message v-for="m in messages" :key="m.text"
                 :name = "m.name"
                 :text = "m.text"
+                :owner = "m.id === user.id"
             />
         </div>
         <div class = 'c-form'>
-
+            <ChatForm/>
         </div>
     </div>
 </template>
 <script>
 import Message from '@/components/Message'
+import ChatForm from '@/components/ChatForm'
 import{mapState} from 'vuex'
 export default {
     middleware: ['chat'],
@@ -22,7 +24,14 @@ export default {
         };
     },
     computed: mapState(["user","messages"]),
-    components: {Message},
+    watch:{
+        messages(){
+            setTimeout(()=> {
+                this.$refs.block.scrollTop = this.$refs.block.scrollHeight
+            }) 
+        }
+    },
+    components: {Message,ChatForm},
 }
 </script>
 <style scoped>
@@ -38,7 +47,7 @@ export default {
         right: 0;
         padding: 1rem;
         height: 80px;
-        background: #212121;
+        background: #faf8f8;
     }
     .c-chat{
         position: relative;

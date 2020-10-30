@@ -10,6 +10,7 @@
                 <p>{{text}}</p>
             </div>
         </div>
+        
     </div>
 </template>
 
@@ -48,7 +49,7 @@ export default {
         margin-bottom: 1rem;
     }
     .owner{
-        background: #fff;
+        background: rgb(104, 175, 46);
         color: #000;
         align-self: flex-end;
     }
