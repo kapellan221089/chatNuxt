@@ -1,4 +1,4 @@
-const {app, server} = require('./app')
+const {app, server} = require('./app');
 const {Nuxt, Builder}  = require('nuxt');
 const config = require('../nuxt.config');
 const morgan = require('morgan');

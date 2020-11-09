@@ -1,11 +1,12 @@
 <template>
     <v-text-field xs12
-            label="Введите сообщение"
-            placeholder="Placeholder"
-            outlined
-            v-model="text"
-            @keydown.enter="send"
-          ></v-text-field>
+        label="Введите сообщение"
+        placeholder="Placeholder"
+        outlined
+        v-model="text"
+        @keydown.enter="send"
+    >
+    </v-text-field>
 </template>
 
 <script>

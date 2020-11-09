@@ -90,7 +90,7 @@
           const user = {
             name: this.name,
             room: this.room
-          }
+          };
 
           this.$socket.emit('userJoined', user, data =>{
             if(typeof data==='String'){

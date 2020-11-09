@@ -30,14 +30,14 @@ export default {
 <style scoped>
     .system{
         margin-bottom: 1rem;
-    }
+    };
     p{
         margin-bottom: 1rem;
-    }
+    };
     .wrap{
         display: flex;
         flex-direction: column;
-    }
+    };
     .mes{
         padding: 1rem;
         width: 60%;
@@ -47,10 +47,10 @@ export default {
         background: #1976d2;
         position: relative;
         margin-bottom: 1rem;
-    }
+    };
     .owner{
         background: rgb(104, 175, 46);
         color: #000;
         align-self: flex-end;
-    }
+    };
 </style>

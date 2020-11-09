@@ -1,5 +1,5 @@
-import Vue from 'vue'
-import VueSocketIO from 'vue-socket.io'
+import Vue from 'vue';
+import VueSocketIO from 'vue-socket.io';
 
 export default function({ store }) {
   Vue.use(

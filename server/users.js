@@ -21,9 +21,9 @@ class Users {
 
     getByRoom(room){
         return this.users.filter(user=> user.room ===room)
-    }
+    };
 
-}
+};
 
 module.exports = function(){
     return new Users()

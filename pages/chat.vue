@@ -39,7 +39,7 @@ export default {
         height: 100%;
         position: relative;
         overflow: hidden;
-    }
+    };
     .c-form{
         position: relative;
         bottom: 0;
@@ -48,7 +48,7 @@ export default {
         padding: 1rem;
         height: 80px;
         background: #faf8f8;
-    }
+    };
     .c-chat{
         position: relative;
         top: 0;
@@ -57,5 +57,5 @@ export default {
         bottom: 80px;
         padding: 1rem;
         overflow-y: auto;
-    }
+    };
 </style>
