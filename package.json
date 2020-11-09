@@ -1,7 +1,6 @@
 {
   "name": "chat-nuxt",
   "version": "1.0.0",
-  "description": "My world-class Nuxt.js project",
   "author": "kapellan",
   "private": false,
   "scripts": {
