@@ -90,6 +90,7 @@
       ...mapMutations(["setUser"]),
       submit () {
         //if(this.$refs.form.validate()){
+          console.log('submitWork')
           const user = {
             name: this.name,
             room: this.room
