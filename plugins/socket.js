@@ -6,7 +6,7 @@ export default function({ store }) {
   Vue.use(
     new VueSocketIO({
       debug: false,
-      connection: 'mighty-taiga-11038.herokuapp.com:'+ PORT,
+      connection: 'https://mighty-taiga-11038.herokuapp.com:'+ PORT,
       vuex: {
         store,
         actionPrefix: 'SOCKET_',
