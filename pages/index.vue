@@ -20,6 +20,7 @@
           <h1>Chat</h1>
           <input v-model="name" style="border:2px solid black">
           <input v-model="room" style="border:2px solid black">
+          <button @click="submit">TESTLOG</button>
         </v-card-title>
         <v-card-text>
         <v-form ref="form" v-model="valid" lazy-validation>
