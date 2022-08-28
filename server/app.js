@@ -45,6 +45,7 @@ io.on('connection', socket => {
   });
   
   socket.on('createMessage', data => {
+    
     if(!data.text){
       return cb('Текст не может быть пустым')
     };
@@ -53,6 +54,7 @@ io.on('connection', socket => {
     if(user){
       io.to(user.room).emit('newMessage', m(user.name, data.text, data.id))
     };
+    
   });
 });
 
