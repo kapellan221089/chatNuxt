@@ -18,6 +18,8 @@
             </v-snackbar>
         <v-card-title>
           <h1>Chat</h1>
+          <input v-model="name" style="border:2px solid black">
+          <input v-model="room" style="border:2px solid black">
         </v-card-title>
         <v-card-text>
         <v-form ref="form" v-model="valid" lazy-validation>
@@ -86,7 +88,7 @@
     methods: {
       ...mapMutations(["setUser"]),
       submit () {
-        if(this.$refs.form.validate()){
+        //if(this.$refs.form.validate()){
           const user = {
             name: this.name,
             room: this.room
@@ -102,7 +104,7 @@
               console.log(user)
             }
           });
-        };
+        //};
       }
     },
   }
