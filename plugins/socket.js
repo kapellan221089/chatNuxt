@@ -1,11 +1,12 @@
 import Vue from 'vue';
 import VueSocketIO from 'vue-socket.io';
+const port = process.env.PORT 
 
 export default function({ store }) {
   Vue.use(
     new VueSocketIO({
       debug: false,
-      connection: 'http://localhost:8050',
+      connection: 'mighty-taiga-11038.herokuapp.com:'+ PORT,
       vuex: {
         store,
         actionPrefix: 'SOCKET_',
